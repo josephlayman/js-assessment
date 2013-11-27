@@ -7,37 +7,21 @@ define(function() {
     },
 
     sum : function(arr) {
-        
         var total = 0;
-
         for ( var i = 0 ; i < arr.length ; i++ ){
             total += arr[i];
         }
-
         return total;
     },
 
     remove : function(arr, item) {
-
-        console.log(arr);
-
-        var 
-            newArray = [],
-            location = arr.indexOf(item)
-        ;
-
-        console.log(location)
-
+        var newArray = [];
         for ( var i = 0 ; i < arr.length ; i++ ){
-            if( i != location ) {
-                console.log(i + ' : '+ location);
-                console.log();
-                newArray.push( arr );
+            if( arr[i] != item ) {
+                newArray.push( arr[i] );
             }
         }
-
         return newArray;
-
     },
 
     removeWithoutCopy : function(arr, item) {
@@ -45,23 +29,31 @@ define(function() {
     },
 
     append : function(arr, item) {
-
+        var newArray = [];
+        arr.push(item);
+        return newArray = arr;
     },
 
     truncate : function(arr) {
-
+        var newArray = [];
+        arr.pop();
+        return newArray = arr;
     },
 
     prepend : function(arr, item) {
-
+        var newArray = [];
+        arr.unshift(item);
+        return newArray = arr;
     },
 
     curtail : function(arr) {
-
+        var newArray = [];
+        arr.shift();
+        return newArray = arr;
     },
 
     concat : function(arr1, arr2) {
-
+        return arr1.concat(arr2);
     },
 
     insert : function(arr, item, index) {
@@ -69,7 +61,13 @@ define(function() {
     },
 
     count : function(arr, item) {
-
+        var count = 0;
+        for ( var i = 0 ; i < arr.length ; i++ ){
+            if( arr[i] === item ) {
+                count++;
+            }
+        }
+        return count;
     },
 
     duplicates : function(arr) {

@@ -25,31 +25,36 @@ define(function() {
     },
 
     removeWithoutCopy : function(arr, item) {
+        for ( var i = 0 ; i < arr.length ; i++ ){
 
+            if( arr[i] == item ) {
+                arr.splice( i, 1);
+                console.log(i);
+                console.log(arr[i]);
+                console.log(item);
+            }
+        }
+        return arr;
     },
 
     append : function(arr, item) {
-        var newArray = [];
         arr.push(item);
-        return newArray = arr;
+        return arr;
     },
 
     truncate : function(arr) {
-        var newArray = [];
         arr.pop();
-        return newArray = arr;
+        return arr;
     },
 
     prepend : function(arr, item) {
-        var newArray = [];
         arr.unshift(item);
-        return newArray = arr;
+        return arr;
     },
 
     curtail : function(arr) {
-        var newArray = [];
         arr.shift();
-        return newArray = arr;
+        return arr;
     },
 
     concat : function(arr1, arr2) {
@@ -57,7 +62,8 @@ define(function() {
     },
 
     insert : function(arr, item, index) {
-
+        arr.splice(index, 0, item);
+        return arr;
     },
 
     count : function(arr, item) {
@@ -75,7 +81,10 @@ define(function() {
     },
 
     square : function(arr) {
-
+        for ( var i = 0 ; i < arr.length ; i++ ){
+            arr[i] = arr[i] * arr[i];
+        }
+        return arr;
     },
 
     findAllOccurrences : function(arr, target) {

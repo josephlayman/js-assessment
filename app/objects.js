@@ -7,13 +7,17 @@ define(function() {
     },
 
     alterObjects : function(constructor, greeting) {
-        return constructor.call(greeting);
-        console.log(constructor);
-        console.log(greeting);
+        
+        return constructor;
     },
 
     iterate : function(obj) {
-
+        
+        var array = []; 
+        _.each(obj, function(value, key){
+            array.push( key + ': ' + value );
+        });
+        return array;
     }
   };
 });

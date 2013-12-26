@@ -8,11 +8,9 @@ define(function() {
 
     alterObjects : function(constructor, greeting) {
         
-        return constructor;
     },
 
     iterate : function(obj) {
-        
         var array = []; 
         _.each(obj, function(value, key){
             array.push( key + ': ' + value );
